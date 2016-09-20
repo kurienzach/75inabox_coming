@@ -1,0 +1,125 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>75 In A Box</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="css/normalize.min.css"> -->
+        <link rel="stylesheet" href="css/ladda-themeless.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <div class="container">
+            <div class="header-logo">
+                <img src="img/logo.png" alt="75 In A Box">
+            </div>
+            <div class="content">
+                <img class="banner-img" src="img/banner-img.jpg">
+                <div class="text">
+                    <h1>SOMETHING AWESOME IS IN THE WORKS</h1>
+                    <p>Fitness food, tailored to your needs, carefully curated by Nutritionists, tastefully designed by India's internationally acclaimed chef, cooked and delivered by an awesome ensemble.</p>
+                <br>
+                <p>Lean Mass | Weight Loss | Endurance</p>
+                </div>
+                <div class="swap">
+                    <button onclick="showModal()">Notify Me</button>
+                    <p class="success">Your information has been saved. We will notify you soon.</p>
+                </div>
+
+                <a class="clearfix fb" href="https://www.facebook.com/75inabox/">
+                    <p>Follow us on</p>
+                    <img src="img/fb-ico.png">
+                </a>
+                
+                </div>
+        </div>
+
+        <div class="modal-background" id="modal" style="visibility: hidden" onclick="hideModal()">
+            <div class="modal">
+                <div class="modal-header">
+                    <img src="img/modal-header.png">
+                </div>
+                <form id="form1" method="get" action="abcd">
+                    <h2>Enter details</h2>
+                    <input type="text" pattern="[a-zA-Z ]+" class="input" id="txtname" name="name" placeholder="name" autocomplete="off" required>
+                    <input type="email" class="input" id="txtemail" name="email" placeholder="email address" autocomplete="off" required>
+                    <input type="tel" pattern="[0-9]{10}" class="input" id="txtmobile" name="mobile" placeholder="mobile number" autocomplete="off" required>
+                </form>
+                <button class="ladda-button" data-style="zoom-out" form="form1" value="Notify" type="submit" id="notify">Notify</button>
+            </div>            
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/spin.min.js"></script>
+        <script src="js/ladda.min.js"></script>
+        <script>
+            function showModal() {
+                var modal = document.getElementById("modal")
+                modal.style.visibility = "visible";
+                modal.style.opacity = 1;
+                $("#txtname").focus();
+            }
+
+            function hideModal() {
+                Ladda.stopAll();
+                var modal = document.getElementById("modal")
+                modal.style.opacity = 0;
+                modal.style.visibility = "hidden";
+            }
+
+            $(document).ready(function() {
+                $.fn.isValid = function(){
+                    var validate = true;
+                    this.each(function(){
+                        if(this.checkValidity()==false){
+                            validate = false;
+                        }
+                    });
+                    return validate;
+                };
+
+                $(".modal").click(function(e) {
+                    e.stopPropagation();
+                    return false;
+                });
+
+                $("#notify").click(function() {
+                    $('#form1 input').addClass("entered");
+                    if ($("#form1").isValid()) {
+                        var l = Ladda.create( document.querySelector( '#notify' ) );
+                        l.start();
+                        name = $("#txtname").val();
+                        email = $("#txtemail").val();
+                        mobile = $("#txtmobile").val();
+                        $.get("http://75inabox.com/coming_soon/add_contact", {
+                            name: name,
+                            email: email,
+                            mobile: mobile 
+                        }, function(data) {
+                            console.log(data);
+                            $(".swap").addClass("notified")
+                            hideModal();
+                        })
+
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
+

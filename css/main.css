@@ -1,0 +1,397 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+    height: 100%;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    font-size: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+button {
+    background: #12a546;
+    border: 1px solid #12a646;
+    border-radius: 2px;
+    padding: 12px 15px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+@media(max-width:420px){
+    
+    button {
+        font-size: 0.7em;
+    }
+}
+
+button:hover {
+    background: #16c152;
+    border: 1px solid #16c152;
+}
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+}
+
+.header-logo {
+    position: fixed;
+    top: 0; left: 10%;
+    width: 100%;
+    z-index: 1;
+}
+
+.header-logo img {
+    width: 20%;
+    max-width: 200px;
+    min-width: 150px;
+}
+
+.content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    /*position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;*/
+    margin: auto;
+    max-width: 960px;
+    text-align: center; 
+}
+
+.content .text {
+    margin: 0 16px;
+}
+
+.content h1 {
+    font-size: 1.7em;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    font-weight:700;
+    padding-top: 3vh;
+}
+
+@media(max-width:420px){
+    
+    .content h1 {
+        font-size: 1.3em;
+        letter-spacing: 0.05em;
+    }
+}
+
+.content p {
+    font-weight: 300;
+    font-size: 0.9em;
+    color: #676767;
+    padding: 0px 7% 0px 7%;
+    line-height: 1.7em;
+}
+
+@media(max-width:420px){
+    
+    .content p {
+        font-size: 0.7em;
+    }
+}
+
+.content img {
+    width: 100%;
+}
+
+.content button {
+    margin-top: 10px;
+}
+
+.content .swap.notified button {
+    display: none;
+}
+
+.content .success { 
+    color: #12a646;
+    font-weight: 600;
+    display: none;
+}
+
+.content .swap.notified .success {
+    display: block;
+}
+
+.content .fb {
+    display: block;
+    text-decoration: none;
+    margin-top: 16px;
+}
+.content .fb p {
+    display: inline-block;
+    padding: 0;
+    line-height: 24px;
+}
+.content .fb img {
+    display: inline-block;
+    width: 24px;
+}
+
+.modal-background {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    background: rgba(0,0,0, 0.6);
+    z-index: 100;
+    opacity: 0;
+    -webkit-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in;
+}
+
+.modal {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    margin: auto;
+
+    height: 360px; width: 300px;
+    border-radius: 15px;
+    background: #fff;
+
+    text-align: center;
+}
+
+.modal .modal-header {
+    position: absolute;
+    top: -32px;
+    width: 100%;
+    text-align: center;
+}
+.modal .modal-header img {
+    width: 75px;
+    margin: auto;
+}
+
+.modal h2 {
+    margin-top: 64px;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+.modal [type="submit"] {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    border: 1px solid #000;
+    border-radius: 0 0 15px 15px;
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+
+    background: #000;
+
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.modal [type="submit"]:hover {
+    background: #1f1f1f;
+    border: 1px solid #1f1f1f;
+}
+
+.modal input.input {
+    border: 0;
+    border-bottom: 4px solid #e6e6e6;
+    -webkit-border-radius: 0px; 
+    -moz-border-radius: 0px; 
+    border-radius: 0px; 
+    padding: 4px;
+    font-size: 0.8em;
+    margin: 10px auto;
+    font-weight: 200;
+    font-family: 'Ubuntu', sans-serif;
+    width: 75%;
+    color:#6c6c6c;
+    padding-bottom: 6px;
+}
+
+.modal input.input:active,
+.modal input.input:focus {
+    outline: none;
+    border-bottom: 4px solid #a5a5a5;
+}
+
+.modal input.input.entered:invalid {
+    border-bottom: 2px solid #f84747;   
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #5a5a5a;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #5a5a5a;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #5a5a5a;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #5a5a5a;
+}
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+    .content {
+        -webkit-box-flex: 0.8;
+            -ms-flex: 0.8;
+                flex: 0.8;
+    }
+
+    .content .text {
+        margin: 0 auto;
+    }
+
+    .content img {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+
+}
+
+@media only screen and (min-width: 1140px) {
+
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
